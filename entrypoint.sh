@@ -19,6 +19,7 @@ rm -f vme.log mplex.log
 tail -F vme.log mplex.log &
 ./vme &
 ./mplex -w -p 4280 &
+./mplex -p 4242 &
 
 while [ $done -eq 0 ]
 do
