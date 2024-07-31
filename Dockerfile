@@ -1,4 +1,4 @@
-FROM ubuntu:latest as build
+FROM ubuntu:latest AS build
 
 LABEL description="DikuMUD III Builder"
 WORKDIR /dikumud3
@@ -13,5 +13,6 @@ COPY vme/www/client/*.css /dikumud3/vme/www/docker
 COPY vme/www/client/*.js /dikumud3/vme/www/docker
 RUN mkdir dkr_build && cd dkr_build && cmake -G Ninja .. && ninja
 EXPOSE 4280
+EXPOSE 4242
 VOLUME ["/dikumud3/vme/lib"]
 ENTRYPOINT [ "/dikumud3/entrypoint.sh" ]
