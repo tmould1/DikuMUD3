@@ -1,0 +1,7 @@
+# Ensure shell scripts use LF line endings
+*.sh text eol=lf
+
+# You can add other file types if needed
+*.py text eol=lf
+*.txt text eol=lf
+*.yml text eol=lf
