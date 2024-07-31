@@ -89,6 +89,14 @@ Prerequisites:
 ```console
 DOCKER_BUILDKIT=1 docker build . -t dikumud3
 ```
+#### Windows Command Line
+```
+set DOCKER_BUILDKIT=1&& docker build . -t dikumud3
+```
+#### Windows Powershell
+```
+$env:DOCKER_BUILDKIT=1; docker build . -t dikumud3
+```
 
 ### Run the mud in a new container, binding the port to localhost
 ```console
@@ -105,7 +113,7 @@ docker volume create muddata
 
 Mount the volume when you start a container instance
 ```console
-docker run -d -p 4280:4280 -p 80:80 -v muddata:/dikumud3/vme/lib -v dikumud3
+docker run -d -p 4280:4280 -p 80:80 -p 4242:4242 -v muddata:/dikumud3/vme/lib dikumud3
 ```
 
 Create a bash shell into the container then so you can rebuild/restart vme mplex etc
